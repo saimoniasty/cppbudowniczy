@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 607
-  Top = 249
+  Left = 460
+  Top = 244
   Width = 1305
   Height = 750
   Caption = 'notatnik'
@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Tresc: TMemo
@@ -27,6 +28,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    OnKeyDown = TrescKeyDown
   end
   object MainMenu1: TMainMenu
     Left = 1224
@@ -34,14 +36,14 @@ object Form1: TForm1
     object Plik1: TMenuItem
       Caption = '&Plik'
       object Nowy1: TMenuItem
-        Caption = '&Nowy'
+        Caption = '&Nowy    Ctrl+N'
         OnClick = Nowy1Click
       end
       object N1: TMenuItem
         Caption = '-'
       end
       object Otwrz1: TMenuItem
-        Caption = '&Otw'#243'rz'
+        Caption = '&Otw'#243'rz    Ctrl+O'
         OnClick = Otwrz1Click
       end
       object Zapisz1: TMenuItem
@@ -57,6 +59,7 @@ object Form1: TForm1
       end
       object Zakoncz1: TMenuItem
         Caption = 'Zako'#324'&cz'
+        OnClick = Zakoncz1Click
       end
     end
     object Edycja1: TMenuItem

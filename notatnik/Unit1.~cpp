@@ -63,3 +63,36 @@ void __fastcall TForm1::Nowy1Click(TObject *Sender)
    }
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm1::TrescKeyDown(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+   if(Shift.Contains(ssCtrl)){
+        if((Key=='s') || (Key=='S')){
+                Form1->Zapisz1Click(MainMenu1);
+        }
+        if((Key=='n') || (Key=='N')){
+                Form1->Nowy1Click(MainMenu1);
+        }
+        if((Key=='o') || (Key=='O')){
+                Form1->Otwrz1Click(MainMenu1);
+        }
+   }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Zakoncz1Click(TObject *Sender)
+{
+   if(Application->MessageBoxA("Czy na pewno zakoñczyæ program?","PotwiedŸ",MB_YESNO | MB_ICONQUESTION) == IDYES){
+        Application->Terminate();
+   }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+   if(Application->MessageBoxA("Czy na pewno zakoñczyæ program?","PotwiedŸ",MB_YESNO | MB_ICONQUESTION) == IDNO){
+        Action=caNone;
+   }
+}
+//---------------------------------------------------------------------------
+

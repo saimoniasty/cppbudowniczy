@@ -19,11 +19,11 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 {
         if(Label1->Visible==false){
                 Label1->Visible=true;
-                Button1->"Schowam sie";
+                Button1->Caption="Schowam siê";
         }
         else{
                 Label1->Visible=false;
-                Button1->"Kliknij mnie";
+                Button1->Caption="Poka¿e siê";
         }
 }
 //---------------------------------------------------------------------------
